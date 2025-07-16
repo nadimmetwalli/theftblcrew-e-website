@@ -8,7 +8,7 @@ const dmSans = DM_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Official Ecommerce Website of theftblcrew",
-  description: "Template created by Nadim Metwalli",
+  description: "Created by Nadim Metwalli",
 };
 
 export default function RootLayout({
