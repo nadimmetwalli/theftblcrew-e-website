@@ -22,6 +22,7 @@ export const LogoTicker = () => {
                                 width={160} 
                                 height={64}
                                 className="h-full w-auto object-contain"
+                            
                             />
                         </div>
                         <div className="h-16 w-auto flex items-center">
