@@ -24,7 +24,7 @@ export const Header = () => {
         <div className='container px-4 mx-auto'> {/* Added mx-auto for proper centering */}
           <div className='flex items-center'>
             {/* Logo - fixed width to prevent pushing */}
-            <div className='mr-auto -ml-39'> {/* Adjust width as needed */}
+            <div className='mr-auto ml-10'> {/* Adjust width as needed */}
               <Image 
                 src={ftblcrewlogo} 
                 alt='ftblcrew-logo' 

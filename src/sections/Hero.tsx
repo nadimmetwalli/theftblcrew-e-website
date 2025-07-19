@@ -45,7 +45,7 @@ export const Hero = () => {
               width={220} 
               height={220} 
               alt='cylinder image'
-              className='hidden md:block absolute -top-8 -left-32'
+              className='hidden md:block absolute -top-8 -left-21'
             />
             <Image 
               src={noodleImage} 
