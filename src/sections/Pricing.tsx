@@ -18,7 +18,7 @@ const pricingTiers = [
   },
   {
     title: "Custom Package",
-    monthlyPrice: "Negotiable (based on needs)",
+    price: "Negotiable (based on needs)",
     buttonText: "Sign up now",
     popular: true,
     inverse: true,
@@ -33,7 +33,7 @@ const pricingTiers = [
   },
   {
     title: "Growth Package",
-    monthlyPrice: 90,
+    price: 90,
     buttonText: "Sign up now",
     popular: false,
     inverse: false,
@@ -59,16 +59,24 @@ export const Pricing = () => {
             <div>
                 {pricingTiers.map(({title, price, buttonText, popular, inverse, features}) => (
                     <div key={title} className='p-10 border border-[#F1F1F1] rounded-3xl shadow-[0_7px_14px_#EAEAEA]'>
-                        <h3>{title}</h3>
-                        <div>
-                            <span>€{price}</span>
-                            <span>/deal</span>
+                        <div className='flex justify-between'>
+                        <h3 className='text-lg font-bold text-blac/50'>{title}</h3>
+                        <div className='inline-flex text-sm px-4 py-1.5 rounded-xl border border-white/20'>
+                           <span 
+                           className='bg-[linear-gradient(to_right,#DD7DDF,#E1CD86,#BBCB92,#71C2EF,#3BFFFF,#DD7DDF)] bg-clip-text text-transparent font-medium'>
+                            Popular
+                            </span>
                         </div>
-                        <button>{buttonText}</button>
-                        <ul>
+                        </div>
+                        <div className='flex items-baseline gap-1 mt-[30px]'>
+                            <span className='text-4xl font-bold tracking-tighter leading-none'>€{price}</span>
+                            <span className='tracking-tight font-vold text-black/50'>/deal</span>
+                        </div>
+                        <button className='btn btn-primary w-full mt-[30px]'>{buttonText}</button>
+                        <ul className='flex flex-col gap-5 mt-8'>
                             {features.map(feature => (
                                 <li 
-                                key={feature}>
+                                key={feature} className='text-sm flex items-center gap-4'>
                                     <Image
                                     src={CheckIcon}
                                     alt='Check icon'
