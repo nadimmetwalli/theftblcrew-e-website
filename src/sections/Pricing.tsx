@@ -53,7 +53,7 @@ export const Pricing = () => {
     <section className="py-24">
       <div className="container">
         <div className='section-heading'>
-        <h2 className="section-title">Pricing</h2>
+        <h2 className="section-title">Services</h2>
         <p className="section-description mt-5">
           We offer different types of service for brands, business owners, start-ups, and more. 
           Those include shoutout posts, promotions, brand collaborations, music promotions and more!
