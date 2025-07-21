@@ -5,6 +5,7 @@ import { ProductShowcase } from '@/sections/ProductShowcase';
 import { Pricing } from '@/sections/Pricing';
 import { Statistics } from '@/sections/Statistics';
 import { CallToAction } from '@/sections/CallToAction';
+import { Footer } from '@/sections/Footer';
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
     <Pricing />
     <Statistics />
     <CallToAction />
+    <Footer />
     </>
   );
 }
