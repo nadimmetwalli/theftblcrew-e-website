@@ -47,10 +47,9 @@ export const Header = () => {
             <div className='hidden md:flex flex-1 justify-end gap-6 -pr-31'> {/* Added gap-8 and pr-8 */}
               <nav className='flex gap-8 text-black/60 items-center'> {/* Adjust gap as needed */}
                 <a href='#'>About</a>
-                <a href='#'>Statistics</a>
-                <a href='#'>Customers</a>
                 <a href='#'>Services</a>
-                <a href='#'>Help</a>
+                <a href='#'>Statistics</a>
+                <a href='#'>Contact</a>
               </nav>
               <div className='ml-4'> {/* Extra spacing before button */}
                 <button className='bg-black text-white px-4 py-2 rounded-lg font-medium tracking-tight whitespace-nowrap'>
