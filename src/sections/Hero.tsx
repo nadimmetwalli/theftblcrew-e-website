@@ -1,12 +1,25 @@
+"use client";
 import ArrowIcon from '@/assets/arrow-right.svg';
 import yamal from '@/assets/yamal.png';
 import cylinderImage from '@/assets/cylinder.png';
 import Image from "next/image";
 import noodleImage from '@/assets/noodle.png'
+import {motion, useScroll, useTransform} from 'framer-motion';
+import {useRef} from "react";
+
 
 export const Hero = () => {
+  const heroRef = useRef(null);
+  const {scrollYProgress} = useScroll({
+    target: heroRef,
+    offset: ['start end', 'end start'],
+  });
+  const translateY = useTransform(scrollYProgress, [0, 1], [150, -150]);
+
+
+
   return (
-    <section className="pt-8 pb-20 md:pt-5 md:pb-10 bg-[radial-gradient(ellipse_200%_100%_at_bottom_left,_#183EC2,#EAEEFE_100%)] overflow-x-clip">
+    <section ref={heroRef} className="pt-8 pb-20 md:pt-5 md:pb-10 bg-[radial-gradient(ellipse_200%_100%_at_bottom_left,_#183EC2,#EAEEFE_100%)] overflow-x-clip">
       <div className="container px-4 mx-auto">
         <div className='md:flex items-center'>
           <div className='md:w-[478px]'>
@@ -35,23 +48,38 @@ export const Hero = () => {
           </div>
 
           <div className='mt-20 md:mt-0 md:h-[648px] md:flex-1 relative'>
-            <Image 
-              src={yamal} 
+            <motion.img 
+              src={yamal.src} 
               alt='Lamine Yamal picture' 
-              className='md:absolute md:h-auto md:w-[43%] md:left-80 md:top-11' 
+              className='md:absolute md:h-auto md:w-[43%] md:left-80 md:top-11'
+              animate={{
+                translateY: [-30, 30],
+              }}
+              transition={{
+                repeat:Infinity,
+                repeatType: "mirror",
+                duration: 4,
+                ease: "easeInOut",
+              }} 
             />
-            <Image 
-              src={cylinderImage} 
+            <motion.img
+              src={cylinderImage.src} 
               width={220} 
               height={220} 
               alt='cylinder image'
               className='hidden md:block absolute -top-8 -left-21'
+              style={{
+                translateY: translateY,
+              }}
             />
-            <Image 
-              src={noodleImage} 
+            <motion.img 
+              src={noodleImage.src} 
               width={220} 
               className='hidden lg:block absolute top-[524px] left-[800px] rotate-[30deg]' 
               alt='noodle image'
+              style={{
+                translateY: translateY,
+              }}
             />
           </div>
         </div>
