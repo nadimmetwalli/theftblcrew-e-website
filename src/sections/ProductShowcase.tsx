@@ -1,11 +1,21 @@
+"use client";
 import productImage from '@/assets/product-image.png'
 import Image from "next/image";
 import pyramidImage from '@/assets/pyramid.png'
 import tubeImage from '@/assets/tube.png'
+import { motion, useScroll, useTransform } from 'framer-motion';
+import {useRef} from "react";
+
 
 export const ProductShowcase = () => {
+    const sectionRef = useRef(null);
+    const {scrollYProgress} = useScroll({
+        target: sectionRef,
+        offset: ['start end', 'end start']
+    });
+    const translateY = useTransform(scrollYProgress, [0, 1], [150, -150])
     return (
-        <section className='bg-gradient-to-b from-[#FFFFFF] to-[#D2DCFF] py-24 overflow-x-clip'>
+        <section ref={sectionRef} className='bg-gradient-to-b from-[#FFFFFF] to-[#D2DCFF] py-24 overflow-x-clip'>
             <div className="container">
                 <div className='max-w-[640px] mx-auto'>
                 <div className='flex justify-center'>
@@ -29,19 +39,27 @@ export const ProductShowcase = () => {
                 className='mt-10 rounded-lg'
                 />
 
-                <Image 
-                src={pyramidImage}
+                <motion.img 
+                src={pyramidImage.src}
                 alt='Pyramid Image'
                 height={262}
                 width={262}
-                className='hidden md:block absolute -right-1 -top-32'/>
+                className='hidden md:block absolute -right-1 -top-32'
+                style={{
+                    translateY,
+                }}/>
+            
                 </div>
 
-                <Image 
-                src={tubeImage}
+                <motion.img
+                src={tubeImage.src}
                 alt='Tube Image'
                 height={262}
-                className='hidden md:block absolute top-360 -left-1'/>
+                width={262}
+                className='hidden md:block absolute top-360 -left-1'
+                style={{
+                    translateY,
+                }}/>
             </div>
         </section>
     );
