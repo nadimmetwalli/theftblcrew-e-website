@@ -1,6 +1,7 @@
 "use client";
 import ArrowIcon from '@/assets/arrow-right.svg';
 import yamal from '@/assets/yamal.png';
+import iphone from '@/assets/iphone-img.png';
 import cylinderImage from '@/assets/cylinder.png';
 import Image from "next/image";
 import noodleImage from '@/assets/noodle.png'
@@ -49,7 +50,7 @@ export const Hero = () => {
 
           <div className='mt-20 md:mt-0 md:h-[648px] md:flex-1 relative'>
             <motion.img 
-              src={yamal.src} 
+              src={iphone.src} 
               alt='Lamine Yamal picture' 
               className='md:absolute md:h-auto md:w-[43%] md:left-80 md:top-11'
               animate={{
