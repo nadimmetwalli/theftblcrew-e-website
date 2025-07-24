@@ -1,6 +1,5 @@
 "use client";
 import ArrowIcon from '@/assets/arrow-right.svg';
-import yamal from '@/assets/yamal.png';
 import iphone from '@/assets/iphone-img.png';
 import cylinderImage from '@/assets/cylinder.png';
 import Image from "next/image";

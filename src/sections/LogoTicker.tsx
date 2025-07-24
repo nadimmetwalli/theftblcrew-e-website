@@ -18,8 +18,6 @@ export const LogoTicker = () => {
         { src: xbetlogo, alt: '1xBet Logo', width: 120, height: 48 },
     ];
 
-    // Duplicate the logos array for seamless looping
-    const duplicatedLogos = [...logos, ...logos];
 
     return (
         <div className="py-8 relative overflow-x-hidden">
